@@ -1,6 +1,6 @@
 @charset "utf-8";
+@import url('/css/font.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-;
 
 * {
   margin: 0;
@@ -25,16 +25,19 @@ img {
 
 html {
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Noto Sans KR', Helvetica, '맑은 고딕', 'malgun gothic', 'Apple SD Gothic Neo', sans-serif;
+  min-width: 320px;
+  font-family: 'ad', "Noto Sans KR", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", "나눔 고딕", "돋움", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.4;
-  letter-spacing: -0.64px;
-  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  color: #727272;
 }
+
 /* 공통요소 */
 .clearfix::after {
   content: '';
@@ -47,6 +50,272 @@ body {
 .inner {
   position: relative;
   display: block;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
+}
+
+.wrap {
+  position: relative;
+  display: block;
+}
+
+/* Header */
+.header {
+  position: relative;
+  display: block;
+
+  background: hotpink;
+}
+
+.header .inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  display: block;
+  width: 109px;
+  height: 36px;
+  background: url('../images/logo_white.png') no-repeat center;
+}
+
+.gnb {
+  padding-left: 80px;
+}
+
+.depth1 {
+  display: flex;
+
+}
+
+.depth1>li {
+  padding-right: 80px;
+}
+
+.depth1>li:last-child {
+  padding-right: 0;
+}
+
+.depth1>li>a {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.depth1>li>a:hover {
+  color: #6C801A;
+}
+
+.header-right {
+  display: flex;
+}
+
+.util {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.util>li {
+  margin-right: 15px;
+}
+
+.util>li:last-child {
+  margin-right: 0;
+}
+
+.search {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url('../images/icon_search_white.png') no-repeat center;
+  background-size: cover;
+}
+
+.search:hover {
+  background: url('../images/icon_search_hover.png') no-repeat center;
+  background-size: cover;
+}
+
+.cart {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url('../images/icon_cart_white.png') no-repeat center;
+  background-size: cover;
+}
+
+.cart:hover {
+  background: url('../images/icon_cart_hover.png') no-repeat center;
+  background-size: cover;
+}
+
+.more-btn {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url('../images/icon_more_white.png') no-repeat center;
+  background-size: cover;
+}
+
+.more-btn:hover {
+  background: url('../images/icon_more_hover.png') no-repeat center;
+  background-size: cover;
+}
+
+.more-btn-list {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-55%);
+  display: none;
+  width: 165px;
+  text-align: right;
+  background-color: #fff;
+}
+
+.more-btn-list>li {
+  padding: 8px 20px;
+  text-align: right;
+}
+
+.more-btn-list>li:first-child {
+  padding-top: 20px;
+}
+
+.more-btn-list>li>a {
+  font-size: 15px;
+  color: #555;
+
+}
+.more-btn-list>li>a:hover{
+  color: #6C801A;
+}
+.drop {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.drop>li {
+  position: relative;
+  margin-right: 24px;
+  color: #fff;
+}
+
+.drop>li>a {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+
+.drop>li>a:hover {
+  color: #6C801A;
+}
+.signbox{
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-55%);
+  display: none;
+  width: 100px;
+  background-color: #fff;
+  text-align: right;
+}
+.signbox > li{
+  padding: 8px 20px;
+
+}
+.signbox > li:first-child{
+  padding-top: 20px;
+}
+.signbox li a{
+  font-size: 15px;
+  color: #555;
+}
+.signbox li a:hover{
+  color: #6C801A;
+}
+
+/* Visual */
+.visual {
+  position: relative;
+  display: block;
+}
+
+.visual .inner {
+  position: relative;
+  display: block;
+}
+
+/* Item */
+.item {
+  position: relative;
+  display: block;
+}
+
+.item .inner {
+  position: relative;
+  display: block;
+}
+
+/* News */
+.news {
+  position: relative;
+  display: block;
+}
+
+.news .inner {
+  position: relative;
+  display: block;
+}
+
+/* Daily */
+.daily {
+  position: relative;
+  display: block;
+}
+
+.daily .inner {
+  position: relative;
+  display: block;
+}
+
+/* History */
+.history {
+  position: relative;
+  display: block;
+}
+
+.history .inner {
+  position: relative;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  display: block;
+}
+
+.footer .inner {
+  position: relative;
+  display: block;
 }

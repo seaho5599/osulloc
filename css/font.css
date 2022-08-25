@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* fonts - 아리따 돋움 */
+@font-face {
+  font-family: 'ad';
+  font-style: normal;
+  font-weight: 200;
+  src:url('/css/font/oIn-eYyCTTF-Thin.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'ad';
+  font-style: normal;
+  font-weight: 300;
+  src:url('/css/font/oIn-eYyCTTF-Light') format('woff')
+}
+
+@font-face {
+  font-family: 'ad';
+  font-style: normal;
+  font-weight: 400;
+  src:url('/css/font/AritaDotumMedium.woff2') format('woff2'),
+  url('/css/font/oIn-eYyCTTF-Medium.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'ad';
+  font-style: normal;
+  font-weight: 500;
+  src:url('/css/font/AritaDotumSemiBold.woff2') format('woff2'),
+  url('/css/font/oIn-eYyCTTF-SemiBold.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'ad';
+  font-style: normal;
+  font-weight: 600;
+  src:url('/css/font/AritaDotumBold.woff2') format('woff2'),
+  url('/css/font/oIn-eYyCTTF-Bold.woff') format('woff')
+}
+
+@font-face {
+  font-family: "BrownLatin";
+  font-weight: 700;
+  src: url("") format("woff");
+}
+
+@font-face {
+  font-family: "BrownLatin";
+  font-weight: 500;
+  src: url("/css/font/BrownLLWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BrownLatin";
+  font-weight: 300;
+  src: url("") format("woff");
+}
