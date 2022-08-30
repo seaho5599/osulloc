@@ -41,6 +41,11 @@ $(document).ready(function(){
     $('.korea').removeClass('korea-hv')
   })
 
+  $(window).scroll(function(){
+    let temp = $(window).scrollTop();
+    // console.log(temp)
+  })
+
   let moreBtn = $('.more-btn');
   let moreBtnList = $('.more-btn-list');
   moreBtn.mouseenter(function(){
@@ -80,17 +85,46 @@ $(document).ready(function(){
   let swVisual = new Swiper('.sw-visual',{
     
     loop:true,
+    effect: "fade",
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
-      
     },
-    scrollbar: {
+    navigation: { 
+      nextEl: ".sw-visual-next",
+      prevEl: ".sw-visual-prev",
+    },
+    pagination: {
       el: ".sw-visual-pg",
-      // hide: true,
     },
   })
-
+  let slideNow = true
+  $('.sw-visual-pause').click(function(){
+    if(slideNow){
+      slideNow = false
+      swVisual.autoplay.stop();
+      $('.sw-visual-pause').addClass('sw-visual-play')
+    }else{
+      slideNow = true
+      swVisual.autoplay.start();
+      $('.sw-visual-pause').removeClass('sw-visual-play')
+    }
+  })
+  let noticeList = $('.notice-list > li')
+  let noticeTotal = noticeList.length
+  let noticeIndex = 0
+  let noticeTime = 2000
+  function showNotice(){
+    noticeIndex++;
+    if(noticeIndex >= noticeTotal){
+      noticeIndex = 0
+    }
+    $.each(noticeList,function(item ,index){
+      noticeList.hide()
+      noticeList.eq(noticeIndex).show()
+    })
+  }
+  setInterval(showNotice, noticeTime)
 
 });
 
