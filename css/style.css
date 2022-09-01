@@ -589,6 +589,7 @@ body {
 .item .inner .item-main .item-title {
   position: relative;
   display: flex;
+  margin-bottom: 20px;
 }
 .item .inner .item-main .item-title h3 {
   font-size: 28px;
@@ -628,6 +629,7 @@ body {
 .item .inner .item-main .sw-item {
   width: 100%;
   height: 100%;
+  margin-bottom: 50px;
 }
 .item .inner .item-main .sw-item .swiper-slide {
   width: auto;
@@ -641,6 +643,9 @@ body {
   max-width: 100%;
   height: auto;
   vertical-align: top;
+}
+.item .inner .item-main .sw-item .swiper-slide a .item-hover {
+  display: none;
 }
 .item .inner .item-main .sw-item .swiper-slide a .tea-name {
   font-size: 16px;
@@ -679,6 +684,9 @@ body {
   background-color: #A89079;
   margin-top: 40px;
 }
+.item .inner .item-main .sw-item .swiper-slide a .new-non, .item .inner .item-main .sw-item .swiper-slide a .origni-non, .item .inner .item-main .sw-item .swiper-slide a .sale-non {
+  display: none;
+}
 .item .inner .item-main .sw-item-control {
   position: absolute;
   top: 50%;
@@ -686,7 +694,6 @@ body {
   left: 0;
   display: block;
   width: 100%;
-  height: 100%;
 }
 .item .inner .item-main .sw-item-control .sw-item-prev {
   position: absolute;
@@ -712,13 +719,46 @@ body {
   border: 0;
   cursor: pointer;
 }
+.item .inner .item-main .more-btn-box {
+  text-align: center;
+}
+.item .inner .item-main .more-btn-box .more-main-btn {
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 0 40px;
+}
+.item .inner .item-main .more-btn-box .more-main-btn span {
+  font-size: 14px;
+  color: #666;
+}
+
 /* News */
 .news {
   position: relative;
   display: block;
+  margin-top: 80px;
+  padding: 80px 0;
+  background-color: #f6f6f6;
 }
-
 .news .inner {
+  position: relative;
+  display: flex;
+}
+.news .inner .news-sale {
+  position: relative;
+  display: block;
+}
+.news .inner .news-check {
+  position: relative;
+  display: block;
+}
+.news .inner .news-story {
   position: relative;
   display: block;
 }

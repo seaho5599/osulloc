@@ -16,7 +16,8 @@ $(document).ready(function () {
   let header = $('.header')
   let depthLiA = $('.depth1 > li > a')
   let dropLiA = $('.drop > li > a')
-  function headerEn(){
+
+  function headerEn() {
     header.addClass('header-hv')
     $('.logo').addClass('logo-hv')
     $('.search').addClass('search-hv')
@@ -27,7 +28,8 @@ $(document).ready(function () {
     dropLiA.css("color", "#555")
     $('.korea').addClass('korea-hv')
   }
-  function headerLe(){
+
+  function headerLe() {
     header.removeClass('header-hv')
     $('.logo').removeClass('logo-hv')
     $('.search').removeClass('search-hv')
@@ -47,9 +49,9 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     let temp = $(window).scrollTop();
-    if(temp >= 618){
+    if (temp >= 618) {
       headerEn();
-    }else{
+    } else {
       headerLe();
     }
   })
@@ -139,54 +141,47 @@ $(document).ready(function () {
     .then(res => res.json())
     .then(data => {
       // console.log(data)
+      let html = ''
+      data.forEach(function (value, index, item) {
+        // console.log(value)
+        html += `
+        <div class="swiper-slide">
+          <a href="${value.link}">
+              <img src="images/${value.img}" alt="tea" class="item-img">
+              <img src="images/${value.imghover}" alt="tea" class="item-hover">
+              <p class="tea-name">${value.title}</p>
+              <p class="tea-origin ${value.originclass}">${value.origin}</p>
+              <p class="tea-price">${value.price}</p>
+              <span class="tea-sale ${value.saleclass}">${value.sale}</span>
+              <br>
+              <p class="tea-new ${value.newclass}">${value.new}</p>
+              </a>
+              </div>
+        `;
+        
+      });
+      html += '';
+      document.getElementById('item-list').innerHTML = html;
+      let itemImg = $('.item-img')
+    
+      
+      let swItem = new Swiper('.sw-item', {
+        loop: true,
+        slidesPerView: 5,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".sw-item-next",
+          prevEl: ".sw-item-prev",
+        },
+      })
     })
     .catch(err => console.log(err))
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'item.json');
-  xhr.send();
-  xhr.onreadystatechange = function (e) {
-    // 서버의 응답 체크
-    if (xhr.readyState !== XMLHttpRequest.DONE) return;
-    // 이 아래부분은 서버에서 응답이 왔을 때만 실행됩니다.
-    // 서버가 살아있고(200)
-    if (xhr.status == 200) {
-      // console.log(xhr.responseText);     
-      // 수신 내용은 String ----> Object 
-      let data = JSON.parse(xhr.responseText);
-      let html = ``;
-      data.forEach(function (value, index, item) {
-        console.log(value);
-        html += `
-          <div class="swiper-slide">
-          <a href="${value.link}">
-                  <img src="images/${value.img}" alt="">
-                  <p class="tea-name">${value.title}</p>
-                  <p class="tea-origin">${value.origin}</p>
-                  <p class="tea-price">${value.price}</p>
-                  <span class="tea-sale">${value.sale}</span>
-                  <br>
-                  <p class="tea-new">${value.new}</p>
-                </a>
-                </div>
-          `;
-      });
-      document.getElementById('item-list').innerHTML = html;
-    } else {
-      console.log(`${xhr.status} : ${xhr.statusText}`);
-    }
-  }
-
-  let swItem = new Swiper('.sw-item', {
-    loop: true,
-    
-    slidesPerView: 5,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-  })
+  
 });
 
 
