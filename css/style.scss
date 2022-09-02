@@ -748,12 +748,14 @@ body {
               height: auto;
               vertical-align: top;
             }
+
             // .item1:hover{
             //   content: url('/images/item1-hover.png')
             // }
-            .item-hover{
+            .item-hover {
               display: none;
             }
+
             .tea-name {
               font-size: 16px;
               margin-top: 15px;
@@ -795,7 +797,10 @@ body {
               background-color: #A89079;
               margin-top: 40px;
             }
-            .new-non, .origni-non, .sale-non{
+
+            .new-non,
+            .origni-non,
+            .sale-non {
               display: none;
             }
           }
@@ -838,8 +843,10 @@ body {
           cursor: pointer;
         }
       }
-      .more-btn-box{
+
+      .more-btn-box {
         text-align: center;
+
         .more-main-btn {
           display: inline-block;
           width: auto;
@@ -851,12 +858,12 @@ body {
           background-color: #fff;
           padding: 0 40px;
           // padding-top: 48px;
-          
+
           span {
             font-size: 14px;
             color: #666;
           }
-      }
+        }
       }
     }
   }
@@ -869,20 +876,72 @@ body {
   margin-top: 80px;
   padding: 80px 0;
   background-color: #f6f6f6;
+
   .inner {
     position: relative;
     display: flex;
-    .news-sale{
+    justify-content: space-between;
+
+    .news-sale {
       position: relative;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+      height: 600px;
+      flex: 0 0 50%;
+      background: url('../images/new1.jpg') no-repeat center;
+
+      .news-sale-top {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: 30px;
+          color: #fff;
+          font-weight: 500;
+        }
+
+        .news-sale-time {
+          
+          font-size: 28px;
+          color: rgba(255, 255, 255, .8);
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          letter-spacing: -0.05em;
+        }
+        .news-sale-time::before{
+          content: '';
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background: url('../images/news-sale-time.png') no-repeat center;
+        }
+      }
+
+      .news-sale-bottom {
+        .news-sale-title {}
+
+        .news-sale-info {
+          .news-info-sale {}
+
+          .news-info-origin {}
+
+          .news-info-price {}
+        }
+      }
     }
-    .news-check{
-      position: relative;
-      display: block;
-    }
-    .news-story{
-      position: relative;
-      display: block;
+
+    .news-right {
+      .news-check {
+        position: relative;
+        display: block;
+      }
+
+      .news-story {
+        position: relative;
+        display: block;
+      }
     }
   }
 }
