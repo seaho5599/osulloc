@@ -147,8 +147,7 @@ $(document).ready(function () {
         html += `
         <div class="swiper-slide">
           <a href="${value.link}">
-              <img src="images/${value.img}" alt="tea" class="item-img">
-              <img src="images/${value.imghover}" alt="tea" class="item-hover">
+              <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
               <p class="tea-name">${value.title}</p>
               <p class="tea-origin ${value.originclass}">${value.origin}</p>
               <p class="tea-price">${value.price}</p>
@@ -162,9 +161,6 @@ $(document).ready(function () {
       });
       html += '';
       document.getElementById('item-list').innerHTML = html;
-      let itemImg = $('.item-img')
-
-
       let swItem = new Swiper('.sw-item', {
         loop: true,
         slidesPerView: 5,
@@ -180,6 +176,54 @@ $(document).ready(function () {
       })
     })
     .catch(err => console.log(err))
+
+  })
+  // fetch("item2.json")
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     // console.log(data)
+  //     let html = ''
+  //     data.forEach(function (value, index, item) {
+  //       // console.log(value)
+  //       html += `
+  //       <div class="swiper-slide">
+  //         <a href="${value.link}">
+  //             <img src="images/${value.img}" alt="tea" class="item-img">
+              
+  //             <p class="tea-name">${value.title}</p>
+  //             <p class="tea-origin ${value.originclass}">${value.origin}</p>
+  //             <p class="tea-price">${value.price}</p>
+  //             <span class="tea-sale ${value.saleclass}">${value.sale}</span>
+  //             <br>
+  //             <p class="tea-new ${value.newclass}">${value.new}</p>
+  //             </a>
+  //             </div>
+  //       `;
+
+  //     });
+  //     html += '';
+  //     document.getElementById('item-list2').innerHTML = html;
+  //     let swItem2 = new Swiper('.sw-item2', {
+  //       loop: true,
+  //       slidesPerView: 5,
+  //       spaceBetween: 20,
+  //       autoplay: {
+  //         delay: 5000,
+  //         disableOnInteraction: false,
+  //       },
+  //       navigation: {
+  //         nextEl: ".sw-item-next",
+  //         prevEl: ".sw-item-prev",
+  //       },
+  //     })
+  //   })
+  //   .catch(err => console.log(err))
+    let itemBest = $('.item-best');
+    let itemPop = $('.item-pop');
+    itemPop.click(function(){
+      $('.sw-item').hide()
+      $('.sw-item2').show()
+  
   // Set the date we're counting down to
   let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
 

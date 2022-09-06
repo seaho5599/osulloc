@@ -1,0 +1,146 @@
+[
+  {
+    "link": "#",
+    "img": "item2-1.png",
+    "imghover":"item2-1-hover.png",
+    "imgclass":"item2-1",
+    "title": "에브리데이 머그 키트",
+    "origin": "37,500원",
+    "price": "26,250원",
+    "sale": "30%",
+    "soldout": "sold-out"
+
+    
+  },
+  {
+    "link": "#",
+    "img": "item2-2.png",
+    "imghover":"item2-2-hover.png",
+    "imgclass":"item2-2",
+    "title": "프리미엄 티 컬렉션",
+    "origin": "28,000원",
+    "price": "22,400원",
+    "sale": "20%",
+    "newclass": "new-non"
+
+    
+  },
+  {
+    "link": "#",
+    "img": "item2-3.png",
+    "imghover":"item2-3-hover.png",
+    "imgclass":"item2-3",
+    "title": "러블리 티 박스",
+    "originclass":"origni-non",
+    "saleclass":"sale-non",
+    "price": "20,000원",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item2-4.png",
+    "imghover":"item2-4-hover.png",
+    "imgclass":"item2-4",
+    "title": "그린티 랑드샤",
+    "origin": "13,000원",
+    "price": "10,400원",
+    "sale": "20%",
+    "soldout": "sold-out"
+  },
+  {
+    "link": "#",
+    "img": "item2-5.png",
+    "imghover":"item2-5-hover.png",
+    "imgclass":"item2-5",
+    "title": "시크릿 티 스토리",
+    "origin": "45,000원",
+    "price": "36,000원",
+    "sale": "20%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item2-6.png",
+    "imghover":"item2-6-hover.png",
+    "imgclass":"item2-6",
+    "title": "에브리데이 텀블러 키트",
+    "originclass":"origni-non",
+    "saleclass":"sale-non",
+    "price": "36,500원",
+    "newclass": "new-non"
+
+  },
+  {
+    "link": "#",
+    "img": "item2-7.png",
+    "imghover":"item2-7-hover.png",
+    "imgclass":"item2-7",
+    "title": "오 땡큐 티 박스",
+    "origin": "22,000원",
+    "price": "17,600원",
+    "sale": "20%",
+    "newclass": "new-non"
+
+  },
+  {
+    "link": "#",
+    "img": "item2-8.png",
+    "imghover":"item2-8-hover.png",
+    "imgclass":"item2-8",
+    "title": "신 오브 제주",
+    "originclass":"origni-non",
+    "saleclass":"sale-non",
+    "price": "27,000원",
+    "newclass": "new-non"
+
+  },
+  {
+    "link": "#",
+    "img": "item2-9.png",
+    "imghover":"item2-9-hover.png",
+    "imgclass":"item2-9",
+    "title": "프리미엄 티 컬렉션90입",
+    "price": "70,000원",
+    "originclass":"origni-non",
+    "saleclass":"sale-non",
+    "newclass": "new-non"
+
+  },
+  {
+    "link": "#",
+    "img": "item2-10.png",
+    "imghover":"item2-10-hover.png",
+    "imgclass":"item2-10",
+    "title": "제주 순수녹차",
+    "origin": "9,500원",
+    "price": "6,650원",
+    "sale": "30%",
+    "newclass": "new-non"
+
+  },
+  {
+    "link": "#",
+    "img": "item2-11.png",
+    "imghover":"item2-11-hover.png",
+    "imgclass":"item2-11",
+    "title": "그린티 웨하스",
+    "price": "5,500원",
+    "originclass":"origni-non",
+    "saleclass":"sale-non",
+    "newclass": "new-non"
+
+  }, 
+  {
+    "link": "#",
+    "img": "item2-12.png",
+    "imghover":"item2-12-hover.png",
+    "imgclass":"item2-12",
+    "title": "시그니처 비스킷",
+    "origin": "13,000원",
+    "price": "11,050원",
+    "sale": "15%",
+    "newclass": "new-non"
+
+  } 
+
+]
