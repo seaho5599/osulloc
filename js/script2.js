@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   let swBanner = new Swiper('.sw-banner', {
     direction: "vertical",
     autoplay: {
@@ -55,7 +54,6 @@ $(document).ready(function () {
       headerLe();
     }
   })
-
   let moreBtn = $('.more-btn');
   let moreBtnList = $('.more-btn-list');
   moreBtn.mouseenter(function () {
@@ -91,7 +89,6 @@ $(document).ready(function () {
   //       subMenu.stop().slideToggle();
   //     })
   // })
-
   let swVisual = new Swiper('.sw-visual', {
 
     loop: true,
@@ -136,7 +133,6 @@ $(document).ready(function () {
     })
   }
   setInterval(showNotice, noticeTime)
-
   fetch("item.json")
     .then(res => res.json())
     .then(data => {
@@ -145,18 +141,18 @@ $(document).ready(function () {
       data.forEach(function (value, index, item) {
         // console.log(value)
         html += `
-        <div class="swiper-slide">
-          <a href="${value.link}">
-              <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
-              <p class="tea-name">${value.title}</p>
-              <p class="tea-origin ${value.originclass}">${value.origin}</p>
-              <p class="tea-price">${value.price}</p>
-              <span class="tea-sale ${value.saleclass}">${value.sale}</span>
-              <br>
-              <p class="tea-new ${value.newclass}">${value.new}</p>
-              </a>
-              </div>
-        `;
+            <div class="swiper-slide">
+              <a href="${value.link}">
+                  <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+                  <p class="tea-name">${value.title}</p>
+                  <p class="tea-origin ${value.originclass}">${value.origin}</p>
+                  <p class="tea-price">${value.price}</p>
+                  <span class="tea-sale ${value.saleclass}">${value.sale}</span>
+                  <br>
+                  <p class="tea-new ${value.newclass}">${value.new}</p>
+                  </a>
+                  </div>
+            `;
 
       });
       html += '';
@@ -166,8 +162,6 @@ $(document).ready(function () {
         slidesPerView: 5,
         spaceBetween: 20,
         centeredSlides: true,
-        observer: true,
-        observeParents: true,
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
@@ -179,97 +173,35 @@ $(document).ready(function () {
       })
     })
     .catch(err => console.log(err))
-
   fetch("item2.json")
     .then(res => res.json())
-    .then(data => {
-      // console.log(data)
-      let html = ''
-      data.forEach(function (value, index, item) {
-        // console.log(value)
-        html += `
-        <div class="swiper-slide">
-          <a href="${value.link}">
-              <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
-              <p class="tea-name">${value.title}</p>
-              <p class="tea-origin ${value.originclass}">${value.origin}</p>
-              <p class="tea-price">${value.price}</p>
-              <span class="tea-sale ${value.saleclass}">${value.sale}</span>
-              <br>
-              <p class="tea-new ${value.newclass}">${value.soldout}</p>
-              
-              </a>
-              </div>
-        `;
+    .then()
+    .catch()
+    // Set the date we're counting down to
+    let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
 
-      });
-      html += '';
-      document.getElementById('item-list2').innerHTML = html;
-      let swItem = new Swiper('.sw-item2', {
-        loop: true,
-        slidesPerView: 5,
-        spaceBetween: 20,
-        centeredSlides: true,
-        observer: true,
-        observeParents: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".sw-item-next",
-          prevEl: ".sw-item-prev",
-        },
-      })
-    })
-    .catch(err => console.log(err))
+    // Update the count down every 1 second
+    let x = setInterval(function () {
 
-  let itemBest = $('.item-best');
-  let itemPop = $('.item-pop');
-  itemPop.click(function () {
-    $('.sw-item').hide()
-    $('.sw-item2').show()
-    $(this).css({'background-color': '#6C801A' ,'color':'#fff'})
-    itemBest.css({'background-color': '#F6F6F6' ,'color':'#999'})
-  })
-  itemBest.click(function(){
-    $('.sw-item').show()
-    $('.sw-item2').hide()
-    $(this).css({'background-color': '#6C801A' ,'color':'#fff'})
-    itemPop.css({'background-color': '#F6F6F6' ,'color':'#999'})
-  })
-  // Set the date we're counting down to
-  let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+      // Get today's date and time
+      let now = new Date().getTime();
 
-  // Update the count down every 1 second
-  let x = setInterval(function () {
+      // Find the distance between now and the count down date
+      let distance = countDownDate - now;
 
-    // Get today's date and time
-    let now = new Date().getTime();
+      // Time calculations for days, hours, minutes and seconds
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Find the distance between now and the count down date
-    let distance = countDownDate - now;
+      // Output the result in an element with id="demo"
+      document.getElementById("news-time").innerHTML = +hours + " : " +
+        minutes + " : " + seconds;
 
-    // Time calculations for days, hours, minutes and seconds
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Output the result in an element with id="demo"
-    document.getElementById("news-time").innerHTML = +hours + " : " +
-      minutes + " : " + seconds;
-
-    // If the count down is over, write some text 
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("news-time").innerHTML = "EXPIRED";
-    }
-  }, 1000);
-
-});
-
-
-
-window.onload = function () {
-
-}
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("news-time").innerHTML = "EXPIRED";
+      }
+    }, 1000); 
+})

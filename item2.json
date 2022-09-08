@@ -8,7 +8,8 @@
     "origin": "37,500원",
     "price": "26,250원",
     "sale": "30%",
-    "soldout": "sold-out"
+    "soldout": "일시품절",
+    "newclass":"sold-out"
 
     
   },
@@ -45,7 +46,8 @@
     "origin": "13,000원",
     "price": "10,400원",
     "sale": "20%",
-    "soldout": "sold-out"
+    "soldout": "일시품절",
+    "newclass":"sold-out"
   },
   {
     "link": "#",
