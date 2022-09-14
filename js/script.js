@@ -80,7 +80,7 @@ $(document).ready(function () {
   korea.mouseleave(function () {
     langBox.stop().slideUp(200);
   })
-  // let depthLiA = $('.depth1 > li >a');
+  
   // let depthLi = $('.depth1 > li')
   // // let subMenu = $('.submenu');
   // $.each(depthLi, function(index){
@@ -229,14 +229,26 @@ $(document).ready(function () {
   itemPop.click(function () {
     $('.sw-item').hide()
     $('.sw-item2').show()
-    $(this).css({'background-color': '#6C801A' ,'color':'#fff'})
-    itemBest.css({'background-color': '#F6F6F6' ,'color':'#999'})
+    $(this).css({
+      'background-color': '#6C801A',
+      'color': '#fff'
+    })
+    itemBest.css({
+      'background-color': '#F6F6F6',
+      'color': '#999'
+    })
   })
-  itemBest.click(function(){
+  itemBest.click(function () {
     $('.sw-item').show()
     $('.sw-item2').hide()
-    $(this).css({'background-color': '#6C801A' ,'color':'#fff'})
-    itemPop.css({'background-color': '#F6F6F6' ,'color':'#999'})
+    $(this).css({
+      'background-color': '#6C801A',
+      'color': '#fff'
+    })
+    itemPop.css({
+      'background-color': '#F6F6F6',
+      'color': '#999'
+    })
   })
   // Set the date we're counting down to
   let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
@@ -265,6 +277,81 @@ $(document).ready(function () {
       document.getElementById("news-time").innerHTML = "EXPIRED";
     }
   }, 1000);
+
+  fetch('daily.json')
+    .then(res => res.json())
+    .then(data => {
+      // console.log(data)
+      let html = ''
+      data.forEach((value, index, item) => {
+        html += `
+      <div class="swiper-slide">
+        <a href="${value.link}">
+          <div class="daily-img-box">
+          <img src="images/${value.img}" alt="">
+          </div>
+          <div class="daily-box">
+          <h4 class="daily-title">${value.title}</h4>
+          <span class="daily-every ${value.none}">${value.every}</span>
+          <span class="daily-price ${value.none}">${value.price}</span>
+          <span class="daily-free">${value.free}</span>
+          </div>
+        </a>
+        <div class="daily-hover">
+          <div class="daily-hover-inner">
+          <div class="daily-hover-top">
+            <h4 class="daily-title">${value.title}</h4>
+            <span class="daily-every ${value.none}">${value.every}</span>
+            <span class="daily-price ${value.none}">${value.price}</span>
+            <span class="daily-free">${value.free}</span>
+          </div>
+          <p class="daily-hover-txt">
+          ${value.txt1}
+          <br>
+          ${value.txt2}
+          </p>
+          <ul class="daily-hover-list ${value.none}">
+            <li><em>${value.list}</em>${value.listsec}</li>
+            <li><em>${value.list2}</em>${value.list2sec}</li> 
+          </ul>
+          </div>
+        </div>
+      </div>
+      `;
+      });
+      html += '';
+      document.getElementById('daily-list').innerHTML = html;
+    })
+    .catch(err => console.log(err))
+  fetch('history.json')
+    .then(res => res.json())
+    .then(data => {
+      // console.log(data)
+      let html = ''
+      data.forEach((value, index, item) => {
+        html += `
+      <div class="swiper-slide">
+        <a href="${value.link}">
+        <img src="images/${value.img}" alt="메거진">
+        </a>
+        <span class="history-title">${value.title}</span>
+        <span class="history-txt">${value.txt}</span>
+      </div>
+      `;
+      });
+      html += '';
+      document.getElementById('history-list').innerHTML = html;
+      let swHistory = new Swiper('.sw-history',{
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".sw-history-next",
+          prevEl: ".sw-history-prev",
+        },
+      })
+    })
+    .catch(err => console.log(err))
+
 
 });
 
