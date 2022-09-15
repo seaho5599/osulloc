@@ -199,9 +199,6 @@ body {
   background: skyblue;
   z-index: -9;
 }
-.header .inner .header-left .gnb .depth1 li:hover .submenu {
-  display: block;
-}
 .header .inner .header-left .gnb .depth1 > li:last-child {
   padding-right: 0;
 }
@@ -1286,6 +1283,7 @@ body {
   background: url("../images/teastone_banner_pc.jpg") no-repeat center;
   background-size: cover;
   margin-top: 80px;
+  margin-bottom: 60px;
 }
 .history .inner .history-banner .his-banner-box p {
   color: #fff;
@@ -1325,8 +1323,87 @@ body {
   position: relative;
   display: block;
 }
-
+.footer .footer-top {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 63px;
+  background: #67625d;
+  overflow: hidden;
+}
+.footer .footer-top .footer-top-box {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 300px;
+}
+.footer .footer-top .footer-top-box li .f-sign {
+  display: block;
+  width: 94px;
+  height: 40px;
+  margin-right: 6px;
+  padding: 6px 0;
+  border: 1px solid #2a2a2a;
+  background: #3f3e3c;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+.footer .footer-top .footer-top-box li .f-face {
+  display: block;
+  width: 38px;
+  height: 38px;
+  background: url("../images/facebook.png") no-repeat center;
+  background-size: cover;
+  margin-left: 14px;
+  font-size: 0;
+}
+.footer .footer-top .footer-top-box li .f-insta {
+  display: block;
+  width: 38px;
+  height: 38px;
+  background: url("../images/instagram.png") no-repeat center;
+  background-size: cover;
+  margin-left: 14px;
+  font-size: 0;
+}
 .footer .inner {
   position: relative;
   display: block;
+  max-width: 1400px;
+}
+.footer .inner .footer-left {
+  position: relative;
+  display: block;
+  float: left;
+  margin-top: 40px;
+}
+.footer .inner .footer-left .tit {
+  font-size: 14px;
+  color: #7b7b7b;
+}
+.footer .inner .footer-left .phone {
+  font-size: 33.7px;
+  color: #595959;
+  margin-top: 1px;
+}
+.footer .inner .footer-left .time {
+  font-size: 12px;
+  color: #828282;
+  letter-spacing: -0.5px;
+  margin-top: 2px;
+}
+.footer .inner .footer-center {
+  position: relative;
+  display: block;
+  float: left;
+}
+.footer .inner .footer-right {
+  position: relative;
+  display: flex;
+  float: right;
 }/*# sourceMappingURL=style.css.map */
