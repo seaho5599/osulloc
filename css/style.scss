@@ -1581,6 +1581,7 @@ body {
 .footer {
   position: relative;
   display: block;
+  background: #fafafa;
 
   .footer-top {
     position: relative;
@@ -1643,6 +1644,7 @@ body {
     display: block;
     max-width: 1400px;
 
+
     .footer-left {
       position: relative;
       display: block;
@@ -1672,26 +1674,61 @@ body {
       position: relative;
       display: block;
       float: left;
+      margin-top: 40px;
+      margin-left: 100px;
 
-      .tit {}
+      .tit {
+        font-size: 14px;
+        color: #7b7b7b;
+      }
 
-      .e-mail {}
+      .e-mail {
+        font-weight: 700;
+        color: #595959;
+        text-decoration: underline;
+        font-size: 18px;
 
-      .kakao {}
+      }
 
-      .time {}
+      .kakao {
+        font-weight: 700;
+        font-size: 13px;
+        color: #797979;
+      }
+
+      .time {
+        font-size: 12px;
+        color: #828282;
+        letter-spacing: -0.5px;
+        margin-top: 2px;
+      }
     }
 
     .footer-right {
       position: relative;
       display: flex;
       float: right;
+      margin-top: 26px;
+      height: 112px;
+      border-left: 1px solid #efefef;
+      padding-top: 20px;
 
       li {
+
         a {
+          display: inline-block;
+          margin-left: 60px;
+          text-align: center;
+
           img {}
 
-          span {}
+          span {
+            display: block;
+            margin-top: 10px;
+            color: #505051;
+            font-size: 16px;
+            line-height: 1.2;
+          }
         }
       }
     }
