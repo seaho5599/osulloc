@@ -81,16 +81,12 @@ $(document).ready(function () {
     langBox.stop().slideUp(200);
   })
   
-  // let depthLi = $('.depth1 > li')
-  // // let subMenu = $('.submenu');
-  // $.each(depthLi, function(index){
-  //     let depthLiA = $(this).find('>a');
-  //     let subMenu = $(this).find('.submenu');
-  //     $(this).click(function(){
-  //       subMenu.hide()
-  //       subMenu.stop().slideToggle();
-  //     })
-  // })
+  let depthLi = $('.depth1 > li')
+  let subMenu = $('.submenu');
+  $.each(depthLi, function(index){
+      let depthLiA = $(this).find('>a');
+      let subMenu = $(this).find('.submenu');
+  })
 
   let swVisual = new Swiper('.sw-visual', {
 
@@ -147,7 +143,10 @@ $(document).ready(function () {
         html += `
         <div class="swiper-slide">
           <a href="${value.link}">
+              <div class="tea-img">
               <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+              <p class="tea-icon"></p>
+              </div>
               <p class="tea-name">${value.title}</p>
               <p class="tea-origin ${value.originclass}">${value.origin}</p>
               <p class="tea-price">${value.price}</p>
@@ -190,7 +189,10 @@ $(document).ready(function () {
         html += `
         <div class="swiper-slide">
           <a href="${value.link}">
+              <div class="tea-img">
               <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+              <p class="tea-icon"></p>
+              </div>
               <p class="tea-name">${value.title}</p>
               <p class="tea-origin ${value.originclass}">${value.origin}</p>
               <p class="tea-price">${value.price}</p>
@@ -342,7 +344,7 @@ $(document).ready(function () {
       html += '';
       document.getElementById('history-list').innerHTML = html;
       let swHistory = new Swiper('.sw-history',{
-        slidesPerView: 3,
+        slidesPerView: 3.1,
         spaceBetween: 30,
         navigation: {
           nextEl: ".sw-history-next",

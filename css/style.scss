@@ -220,7 +220,7 @@ body {
               display: block;
               width: 100%;
               height: 100vh;
-              background: skyblue;
+              background: #fff;
               z-index: -9;
 
             }
@@ -751,14 +751,70 @@ body {
               height: 100%;
               color: #333;
 
-              img {
-                max-width: 100%;
-                height: auto;
-                vertical-align: top;
-              }
+              .tea-img {
+                position: relative;
+                display: block;
+                img {
+                  max-width: 100%;
+                  height: auto;
+                  vertical-align: top;
+                  transition: all 0.3s ease;
+                }
 
-              .item1:hover {
-                content: url('/images/item1-hover.png')
+                .item1:hover {
+                  content: url('/images/item1-hover.png');
+
+                }
+
+                .item2:hover {
+                  content: url('/images/item2-hover.png');
+                }
+
+                .item3:hover {
+                  content: url('/images/item3-hover.png');
+                }
+
+                .item4:hover {
+                  content: url('/images/item4-hover.png');
+                }
+
+                .item5:hover {
+                  content: url('/images/item5-hover.png');
+                }
+
+                .item6:hover {
+                  content: url('/images/item6-hover.png');
+                }
+
+                .item7:hover {
+                  content: url('/images/item7-hover.png');
+                }
+
+                .item8:hover {
+                  content: url('/images/item8-hover.png');
+                }
+
+                .item9:hover {
+                  content: url('/images/item9-hover.png');
+                }
+                .tea-icon{
+                  position: absolute;
+                  display: block;
+                  right: 0;
+                  bottom: 0;
+                  width: 36px;
+                  height: 36px;
+                  background: url('../images/teaicon.png') no-repeat center;
+                  opacity: 0;
+                  transition: opacity 0.3s ease;
+                }
+                .tea-icon:hover{
+                  background: url('../images/teaicon-hover.png') no-repeat center;
+                  transition: background 0.3s ease;
+                }
+              }
+              .tea-img:hover .tea-icon{
+                opacity: 1;
               }
 
               .tea-name {
@@ -866,15 +922,70 @@ body {
               width: auto;
               height: 100%;
               color: #333;
+              .tea-img {
+                position: relative;
+                display: block;
+                img {
+                  max-width: 100%;
+                  height: auto;
+                  vertical-align: top;
+                  transition: all 0.3s ease;
+                }
 
-              img {
-                max-width: 100%;
-                height: auto;
-                vertical-align: top;
+                .item2-1:hover {
+                  content: url('/images/item2-1-hover.png');
+
+                }
+
+                .item2-2:hover {
+                  content: url('/images/item2-2-hover.png');
+                }
+
+                .item2-3:hover {
+                  content: url('/images/item2-3-hover.png');
+                }
+
+                .item2-4:hover {
+                  content: url('/images/item2-4-hover.png');
+                }
+
+                .item2-5:hover {
+                  content: url('/images/item2-5-hover.png');
+                }
+
+                .item2-6:hover {
+                  content: url('/images/item2-6-hover.png');
+                }
+
+                .item2-7:hover {
+                  content: url('/images/item2-7-hover.png');
+                }
+
+                .item2-8:hover {
+                  content: url('/images/item2-8-hover.png');
+                }
+
+                .item2-9:hover {
+                  content: url('/images/item2-9-hover.png');
+                }
+                .tea-icon{
+                  position: absolute;
+                  display: block;
+                  right: 0;
+                  bottom: 0;
+                  width: 36px;
+                  height: 36px;
+                  background: url('../images/teaicon.png') no-repeat center;
+                  opacity: 0;
+                  transition: opacity 0.3s ease;
+                }
+                .tea-icon:hover{
+                  background: url('../images/teaicon-hover.png') no-repeat center;
+                  transition: background 0.3s ease;
+                }
               }
-
-              .item1:hover {
-                content: url('/images/item1-hover.png')
+              .tea-img:hover .tea-icon{
+                opacity: 1;
               }
 
               .tea-name {
@@ -1461,7 +1572,8 @@ body {
         left: 0;
         display: block;
         width: 100%;
-        // height: 100%;
+        height: auto;
+        z-index: 9;
 
         // z-index: 99;
         .sw-history-prev {
@@ -1489,6 +1601,16 @@ body {
           border: 0;
           cursor: pointer;
         }
+        
+        // .sw-history-next::after{
+        //   content: '';
+        //   position: absolute;
+        //   right: 0;
+        //   top: 0;
+        //   width: 10px;
+        //   height: 100%;
+        //   background: red;
+        // }
       }
 
     }
@@ -1728,6 +1850,117 @@ body {
             color: #505051;
             font-size: 16px;
             line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    position: relative;
+    display: block;
+    background: #fff;
+    padding: 0 0 35px;
+
+    .inner {
+      position: relative;
+      display: block;
+
+      .f-logo {
+        width: 120px;
+        text-align: center;
+        float: left;
+        margin-top: 45px;
+
+        a {
+          img {}
+        }
+      }
+
+      .f-left {
+        float: left;
+        width: auto;
+        max-width: calc(100% - 480px);
+        margin-left: 25px;
+        margin-top: 35px;
+
+        .f-left-top {
+          ul {
+            display: flex;
+            color: #000;
+            font-size: 12px;
+
+            li {
+              a {}
+
+            }
+
+            li::after {
+              content: "I";
+              margin: 0 10px;
+            }
+
+            li:nth-child(3) {
+              font-weight: 600;
+            }
+
+            li:nth-child(3)::after {
+              font-weight: 400;
+            }
+
+            li:last-child::after {
+              display: none;
+            }
+          }
+        }
+
+        .f-left-bottom {
+          position: relative;
+          font-size: 12px;
+          letter-spacing: -0.5px;
+          margin-top: 15px;
+
+          .address {
+            a {}
+          }
+        }
+      }
+
+      .f-right {
+        float: right;
+
+        .f-right-box {
+          width: 310px;
+          height: auto;
+          margin-top: 35px;
+          padding: 15px 20px;
+          border: 1px solid #e8e8e8;
+          letter-spacing: -0.5px;
+          font-size: 12px;
+
+          .f-right-tit {
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+            color: #828282;
+            font-weight: bold;
+          }
+
+          img {
+            float: left;
+            display: block;
+            width: 43px;
+            margin: 4px 8px;
+            cursor: pointer;
+          }
+
+          .f-right-note {
+            float: right;
+            width: 202px;
+            margin: 0;
+            padding-top: 2px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            color: #828282;
           }
         }
       }

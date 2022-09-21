@@ -196,7 +196,7 @@ body {
   display: block;
   width: 100%;
   height: 100vh;
-  background: skyblue;
+  background: #fff;
   z-index: -9;
 }
 .header .inner .header-left .gnb .depth1 > li:last-child {
@@ -640,13 +640,60 @@ body {
   height: 100%;
   color: #333;
 }
-.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a img {
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img {
+  position: relative;
+  display: block;
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img img {
   max-width: 100%;
   height: auto;
   vertical-align: top;
+  transition: all 0.3s ease;
 }
-.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .item1:hover {
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item1:hover {
   content: url("/images/item1-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item2:hover {
+  content: url("/images/item2-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item3:hover {
+  content: url("/images/item3-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item4:hover {
+  content: url("/images/item4-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item5:hover {
+  content: url("/images/item5-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item6:hover {
+  content: url("/images/item6-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item7:hover {
+  content: url("/images/item7-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item8:hover {
+  content: url("/images/item8-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .item9:hover {
+  content: url("/images/item9-hover.png");
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .tea-icon {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  width: 36px;
+  height: 36px;
+  background: url("../images/teaicon.png") no-repeat center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img .tea-icon:hover {
+  background: url("../images/teaicon-hover.png") no-repeat center;
+  transition: background 0.3s ease;
+}
+.item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-img:hover .tea-icon {
+  opacity: 1;
 }
 .item .inner .item-main .sw-item .swiper-wrapper .swiper-slide a .tea-name {
   font-size: 16px;
@@ -736,13 +783,60 @@ body {
   height: 100%;
   color: #333;
 }
-.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a img {
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img {
+  position: relative;
+  display: block;
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img img {
   max-width: 100%;
   height: auto;
   vertical-align: top;
+  transition: all 0.3s ease;
 }
-.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .item1:hover {
-  content: url("/images/item1-hover.png");
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-1:hover {
+  content: url("/images/item2-1-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-2:hover {
+  content: url("/images/item2-2-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-3:hover {
+  content: url("/images/item2-3-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-4:hover {
+  content: url("/images/item2-4-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-5:hover {
+  content: url("/images/item2-5-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-6:hover {
+  content: url("/images/item2-6-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-7:hover {
+  content: url("/images/item2-7-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-8:hover {
+  content: url("/images/item2-8-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .item2-9:hover {
+  content: url("/images/item2-9-hover.png");
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .tea-icon {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  width: 36px;
+  height: 36px;
+  background: url("../images/teaicon.png") no-repeat center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img .tea-icon:hover {
+  background: url("../images/teaicon-hover.png") no-repeat center;
+  transition: background 0.3s ease;
+}
+.item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-img:hover .tea-icon {
+  opacity: 1;
 }
 .item .inner .item-main .sw-item2 .swiper-wrapper .swiper-slide a .tea-name {
   font-size: 16px;
@@ -1222,6 +1316,8 @@ body {
   left: 0;
   display: block;
   width: 100%;
+  height: auto;
+  z-index: 9;
 }
 .history .inner .history-box .sw-history-control .sw-history-prev {
   position: absolute;
@@ -1446,4 +1542,85 @@ body {
   color: #505051;
   font-size: 16px;
   line-height: 1.2;
+}
+.footer .footer-bottom {
+  position: relative;
+  display: block;
+  background: #fff;
+  padding: 0 0 35px;
+}
+.footer .footer-bottom .inner {
+  position: relative;
+  display: block;
+}
+.footer .footer-bottom .inner .f-logo {
+  width: 120px;
+  text-align: center;
+  float: left;
+  margin-top: 45px;
+}
+.footer .footer-bottom .inner .f-left {
+  float: left;
+  width: auto;
+  max-width: calc(100% - 480px);
+  margin-left: 25px;
+  margin-top: 35px;
+}
+.footer .footer-bottom .inner .f-left .f-left-top ul {
+  display: flex;
+  color: #000;
+  font-size: 12px;
+}
+.footer .footer-bottom .inner .f-left .f-left-top ul li::after {
+  content: "I";
+  margin: 0 10px;
+}
+.footer .footer-bottom .inner .f-left .f-left-top ul li:nth-child(3) {
+  font-weight: 600;
+}
+.footer .footer-bottom .inner .f-left .f-left-top ul li:nth-child(3)::after {
+  font-weight: 400;
+}
+.footer .footer-bottom .inner .f-left .f-left-top ul li:last-child::after {
+  display: none;
+}
+.footer .footer-bottom .inner .f-left .f-left-bottom {
+  position: relative;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  margin-top: 15px;
+}
+.footer .footer-bottom .inner .f-right {
+  float: right;
+}
+.footer .footer-bottom .inner .f-right .f-right-box {
+  width: 310px;
+  height: auto;
+  margin-top: 35px;
+  padding: 15px 20px;
+  border: 1px solid #e8e8e8;
+  letter-spacing: -0.5px;
+  font-size: 12px;
+}
+.footer .footer-bottom .inner .f-right .f-right-box .f-right-tit {
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+  color: #828282;
+  font-weight: bold;
+}
+.footer .footer-bottom .inner .f-right .f-right-box img {
+  float: left;
+  display: block;
+  width: 43px;
+  margin: 4px 8px;
+  cursor: pointer;
+}
+.footer .footer-bottom .inner .f-right .f-right-box .f-right-note {
+  float: right;
+  width: 202px;
+  margin: 0;
+  padding-top: 2px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  color: #828282;
 }/*# sourceMappingURL=style.css.map */
