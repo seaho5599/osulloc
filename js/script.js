@@ -1,51 +1,50 @@
 $(document).ready(function () {
-
-  let swBanner = new Swiper('.sw-banner', {
+  let swBanner = new Swiper(".sw-banner", {
     direction: "vertical",
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
     },
-    speed: 800
-  })
-  let banner = $('.banner');
-  let bannerClose = $('.banner-close');
+    speed: 800,
+  });
+  let banner = $(".banner");
+  let bannerClose = $(".banner-close");
   bannerClose.click(function () {
-    banner.fadeOut()
-  })
-  let header = $('.header')
-  let depthLiA = $('.depth1 > li > a')
-  let dropLiA = $('.drop > li > a')
+    banner.fadeOut();
+  });
+  let header = $(".header");
+  let depthLiA = $(".depth1 > li > a");
+  let dropLiA = $(".drop > li > a");
 
   function headerEn() {
-    header.addClass('header-hv')
-    $('.logo').addClass('logo-hv')
-    $('.search').addClass('search-hv')
-    $('.cart').addClass('cart-hv')
-    $('.more-btn').addClass('more-btn-hv')
-    $('.num').addClass('num-hv')
-    depthLiA.css("color", "#555")
-    dropLiA.css("color", "#555")
-    $('.korea').addClass('korea-hv')
+    header.addClass("header-hv");
+    $(".logo").addClass("logo-hv");
+    $(".search").addClass("search-hv");
+    $(".cart").addClass("cart-hv");
+    $(".more-btn").addClass("more-btn-hv");
+    $(".num").addClass("num-hv");
+    depthLiA.css("color", "#555");
+    dropLiA.css("color", "#555");
+    $(".korea").addClass("korea-hv");
   }
 
   function headerLe() {
-    header.removeClass('header-hv')
-    $('.logo').removeClass('logo-hv')
-    $('.search').removeClass('search-hv')
-    $('.cart').removeClass('cart-hv')
-    $('.more-btn').removeClass('more-btn-hv')
-    $('.num').removeClass('num-hv')
-    depthLiA.css("color", "#fff")
-    dropLiA.css("color", "#fff")
-    $('.korea').removeClass('korea-hv')
+    header.removeClass("header-hv");
+    $(".logo").removeClass("logo-hv");
+    $(".search").removeClass("search-hv");
+    $(".cart").removeClass("cart-hv");
+    $(".more-btn").removeClass("more-btn-hv");
+    $(".num").removeClass("num-hv");
+    depthLiA.css("color", "#fff");
+    dropLiA.css("color", "#fff");
+    $(".korea").removeClass("korea-hv");
   }
   header.mouseenter(function () {
     headerEn();
-  })
+  });
   header.mouseleave(function () {
-    headerLe()
-  })
+    headerLe();
+  });
 
   $(window).scroll(function () {
     let temp = $(window).scrollTop();
@@ -54,42 +53,52 @@ $(document).ready(function () {
     } else {
       headerLe();
     }
-  })
+  });
 
-  let moreBtn = $('.more-btn');
-  let moreBtnList = $('.more-btn-list');
+  let moreBtn = $(".more-btn");
+  let moreBtnList = $(".more-btn-list");
   moreBtn.mouseenter(function () {
     moreBtnList.stop().slideDown(100);
-  })
+  });
   moreBtn.mouseleave(function () {
     moreBtnList.stop().slideUp(200);
-  })
-  let login = $('.login');
-  let signBox = $('.signbox');
-  let korea = $('.korea');
-  let langBox = $('.langbox');
+  });
+  let login = $(".login");
+  let signBox = $(".signbox");
+  let korea = $(".korea");
+  let langBox = $(".langbox");
   login.mouseenter(function () {
     signBox.stop().slideDown(100);
-  })
+  });
   login.mouseleave(function () {
     signBox.stop().slideUp(200);
-  })
+  });
   korea.mouseenter(function () {
     langBox.stop().slideDown(100);
-  })
+  });
   korea.mouseleave(function () {
     langBox.stop().slideUp(200);
-  })
-  
-  let depthLi = $('.depth1 > li')
-  let subMenu = $('.submenu');
-  $.each(depthLi, function(index){
-      let depthLiA = $(this).find('>a');
-      let subMenu = $(this).find('.submenu');
-  })
+  });
 
-  let swVisual = new Swiper('.sw-visual', {
+  let depthLi = $(".depth1 > li");
+  let subMenu = $(".submenu");
+  $.each(depthLi, function (index) {
+    let temp = $(this).hasClass("depth-sub");
+    $(this).mouseenter(function () {
+      if (temp) {
+        // subMenu.hide();
+        subMenu.eq(index).stop().slideDown(300);
+        // subMenu.addClass("submenu-hover");
+      }
+    });
+    $(this).mouseleave(function () {
+      if (temp) {
+        subMenu.eq(index).stop().slideUp(300);
+      }
+    });
+  });
 
+  let swVisual = new Swiper(".sw-visual", {
     loop: true,
     effect: "fade",
     autoplay: {
@@ -103,41 +112,41 @@ $(document).ready(function () {
     pagination: {
       el: ".sw-visual-pg",
     },
-  })
-  let slideNow = true
-  $('.sw-visual-pause').click(function () {
+  });
+  let slideNow = true;
+  $(".sw-visual-pause").click(function () {
     if (slideNow) {
-      slideNow = false
+      slideNow = false;
       swVisual.autoplay.stop();
-      $('.sw-visual-pause').addClass('sw-visual-play')
+      $(".sw-visual-pause").addClass("sw-visual-play");
     } else {
-      slideNow = true
+      slideNow = true;
       swVisual.autoplay.start();
-      $('.sw-visual-pause').removeClass('sw-visual-play')
+      $(".sw-visual-pause").removeClass("sw-visual-play");
     }
-  })
-  let noticeList = $('.notice-list > li')
-  let noticeTotal = noticeList.length
-  let noticeIndex = 0
-  let noticeTime = 2000
+  });
+  let noticeList = $(".notice-list > li");
+  let noticeTotal = noticeList.length;
+  let noticeIndex = 0;
+  let noticeTime = 2000;
 
   function showNotice() {
     noticeIndex++;
     if (noticeIndex >= noticeTotal) {
-      noticeIndex = 0
+      noticeIndex = 0;
     }
     $.each(noticeList, function (item, index) {
-      noticeList.hide()
-      noticeList.eq(noticeIndex).show()
-    })
+      noticeList.hide();
+      noticeList.eq(noticeIndex).show();
+    });
   }
-  setInterval(showNotice, noticeTime)
+  setInterval(showNotice, noticeTime);
 
   fetch("item.json")
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       // console.log(data)
-      let html = ''
+      let html = "";
       data.forEach(function (value, index, item) {
         // console.log(value)
         html += `
@@ -156,11 +165,10 @@ $(document).ready(function () {
               </a>
               </div>
         `;
-
       });
-      html += '';
-      document.getElementById('item-list').innerHTML = html;
-      let swItem = new Swiper('.sw-item', {
+      html += "";
+      document.getElementById("item-list").innerHTML = html;
+      let swItem = new Swiper(".sw-item", {
         loop: true,
         slidesPerView: 5,
         spaceBetween: 20,
@@ -175,15 +183,15 @@ $(document).ready(function () {
           nextEl: ".sw-item-next",
           prevEl: ".sw-item-prev",
         },
-      })
+      });
     })
-    .catch(err => console.log(err))
+    .catch((err) => console.log(err));
 
   fetch("item2.json")
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       // console.log(data)
-      let html = ''
+      let html = "";
       data.forEach(function (value, index, item) {
         // console.log(value)
         html += `
@@ -203,11 +211,10 @@ $(document).ready(function () {
               </a>
               </div>
         `;
-
       });
-      html += '';
-      document.getElementById('item-list2').innerHTML = html;
-      let swItem = new Swiper('.sw-item2', {
+      html += "";
+      document.getElementById("item-list2").innerHTML = html;
+      let swItem = new Swiper(".sw-item2", {
         loop: true,
         slidesPerView: 5,
         spaceBetween: 20,
@@ -222,42 +229,41 @@ $(document).ready(function () {
           nextEl: ".sw-item-next",
           prevEl: ".sw-item-prev",
         },
-      })
+      });
     })
-    .catch(err => console.log(err))
+    .catch((err) => console.log(err));
 
-  let itemBest = $('.item-best');
-  let itemPop = $('.item-pop');
+  let itemBest = $(".item-best");
+  let itemPop = $(".item-pop");
   itemPop.click(function () {
-    $('.sw-item').hide()
-    $('.sw-item2').show()
+    $(".sw-item").hide();
+    $(".sw-item2").show();
     $(this).css({
-      'background-color': '#6C801A',
-      'color': '#fff'
-    })
+      "background-color": "#6C801A",
+      color: "#fff",
+    });
     itemBest.css({
-      'background-color': '#F6F6F6',
-      'color': '#999'
-    })
-  })
+      "background-color": "#F6F6F6",
+      color: "#999",
+    });
+  });
   itemBest.click(function () {
-    $('.sw-item').show()
-    $('.sw-item2').hide()
+    $(".sw-item").show();
+    $(".sw-item2").hide();
     $(this).css({
-      'background-color': '#6C801A',
-      'color': '#fff'
-    })
+      "background-color": "#6C801A",
+      color: "#fff",
+    });
     itemPop.css({
-      'background-color': '#F6F6F6',
-      'color': '#999'
-    })
-  })
+      "background-color": "#F6F6F6",
+      color: "#999",
+    });
+  });
   // Set the date we're counting down to
   let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
 
   // Update the count down every 1 second
   let x = setInterval(function () {
-
     // Get today's date and time
     let now = new Date().getTime();
 
@@ -265,26 +271,28 @@ $(document).ready(function () {
     let distance = countDownDate - now;
 
     // Time calculations for days, hours, minutes and seconds
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    document.getElementById("news-time").innerHTML = +hours + " : " +
-      minutes + " : " + seconds;
+    document.getElementById("news-time").innerHTML =
+      +hours + " : " + minutes + " : " + seconds;
 
-    // If the count down is over, write some text 
+    // If the count down is over, write some text
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("news-time").innerHTML = "EXPIRED";
     }
   }, 1000);
 
-  fetch('daily.json')
-    .then(res => res.json())
-    .then(data => {
+  fetch("daily.json")
+    .then((res) => res.json())
+    .then((data) => {
       // console.log(data)
-      let html = ''
+      let html = "";
       data.forEach((value, index, item) => {
         html += `
       <div class="swiper-slide">
@@ -321,15 +329,15 @@ $(document).ready(function () {
       </div>
       `;
       });
-      html += '';
-      document.getElementById('daily-list').innerHTML = html;
+      html += "";
+      document.getElementById("daily-list").innerHTML = html;
     })
-    .catch(err => console.log(err))
-  fetch('history.json')
-    .then(res => res.json())
-    .then(data => {
+    .catch((err) => console.log(err));
+  fetch("history.json")
+    .then((res) => res.json())
+    .then((data) => {
       // console.log(data)
-      let html = ''
+      let html = "";
       data.forEach((value, index, item) => {
         html += `
       <div class="swiper-slide">
@@ -341,24 +349,18 @@ $(document).ready(function () {
       </div>
       `;
       });
-      html += '';
-      document.getElementById('history-list').innerHTML = html;
-      let swHistory = new Swiper('.sw-history',{
+      html += "";
+      document.getElementById("history-list").innerHTML = html;
+      let swHistory = new Swiper(".sw-history", {
         slidesPerView: 3.1,
         spaceBetween: 30,
         navigation: {
           nextEl: ".sw-history-next",
           prevEl: ".sw-history-prev",
         },
-      })
+      });
     })
-    .catch(err => console.log(err))
-
-
+    .catch((err) => console.log(err));
 });
 
-
-
-window.onload = function () {
-
-}
+window.onload = function () {};
