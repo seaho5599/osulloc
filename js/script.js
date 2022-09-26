@@ -1,4 +1,24 @@
 $(document).ready(function () {
+  // 안내창 기능
+  // 추가기능:  스크롤바 없에기
+  $("html").css("overflow", "hiden");
+  let modalWrap = $(".modal-wrap");
+  let modalClose = $(".modal-close");
+  modalClose.click(function () {
+    modalWrap.stop().fadeOut(100);
+    // 추가기능:  스크롤바 살리기
+    $("html").css("overflow", "auto");
+  });
+  let modalMain = $(".modal-main");
+  // 내용배경 클릭
+  modalMain.click(function (event) {
+    event.stopPropagation();
+  });
+  // 전체 배경 클릭
+  modalWrap.click(function () {
+    modalWrap.stop().fadeOut(100);
+    $("html").css("overflow", "auto");
+  });
   let swBanner = new Swiper(".sw-banner", {
     direction: "vertical",
     autoplay: {
@@ -82,18 +102,22 @@ $(document).ready(function () {
 
   let depthLi = $(".depth1 > li");
   let subMenu = $(".submenu");
+  let gnbImg = $(".header .inner .header-left .gnb .depth1 > li .submenu > a");
   $.each(depthLi, function (index) {
     let temp = $(this).hasClass("depth-sub");
     $(this).mouseenter(function () {
       if (temp) {
-        // subMenu.hide();
-        subMenu.eq(index).stop().slideDown(300);
-        // subMenu.addClass("submenu-hover");
+        subMenu.hide();
+        subMenu.eq(index).stop().slideDown(0);
+        subMenu.addClass("submenu-hover");
+        // gnbImg.css("height", "380px");
       }
     });
     $(this).mouseleave(function () {
       if (temp) {
-        subMenu.eq(index).stop().slideUp(300);
+        subMenu.eq(index).stop().slideUp(0);
+        subMenu.removeClass("submenu-hover");
+        // gnbImg.css("height", "0px");
       }
     });
   });

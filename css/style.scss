@@ -60,6 +60,95 @@ body {
   position: relative;
   display: block;
 }
+/* 안내창 */
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+}
+
+.modal-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 400px;
+  background: url("../images/modalimg.png") no-repeat center #ddd;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 7px 0px rgba(0 0 0 / 70%);
+  border: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-main h1 {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+  padding: 10px 0;
+}
+
+.modal-main p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.8;
+}
+
+.modal-main b {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ed1c24;
+}
+
+.modal-main strong {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ed1c24;
+}
+.modal-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.modal-main span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.8;
+  padding: 10px;
+  letter-spacing: 0.5px;
+}
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 0;
+  cursor: pointer;
+  font-size: 22px;
+  color: #555;
+  background: transparent;
+  /* transition: transform 0.4s; */
+}
+
+.modal-close:hover {
+  /* transform: rotate(90deg); */
+  font-size: 21px;
+}
+
+.modal-close:active {
+  font-size: 22px;
+}
 
 // banner
 .banner {
@@ -111,6 +200,7 @@ body {
   // height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);
   z-index: 9999;
+  transition: background 0.5s ease;
 
   .inner {
     position: relative;
@@ -199,18 +289,23 @@ body {
               }
 
               > a {
-                position: absolute;
+                position: relative;
                 top: 70px;
                 left: 60%;
                 display: block;
+                width: 340px;
+                height: 380px;
+                transition: height 0.4s;
 
                 > img {
-                  width: 100%;
+                  height: 100%;
                 }
               }
             }
+
             .submenu-hover {
             }
+
             .submenu::after {
               content: "";
               position: absolute;
@@ -219,10 +314,15 @@ body {
               transform: translateX(-50%);
               display: block;
               width: 100%;
-              height: 500px;
+              height: 0;
               background: #fff;
               z-index: -9;
               border-top: 1px solid #e6e6e6;
+              transition: height 0.5s ease;
+            }
+
+            .submenu-hover::after {
+              height: 500px;
             }
           }
 
@@ -467,6 +567,7 @@ body {
 }
 
 .header-hv {
+  transition: background 0.5s ease;
   background: #fff;
 }
 
@@ -747,6 +848,7 @@ body {
               .tea-img {
                 position: relative;
                 display: block;
+
                 img {
                   max-width: 100%;
                   height: auto;
@@ -789,6 +891,7 @@ body {
                 .item9:hover {
                   content: url("/images/item9-hover.png");
                 }
+
                 .tea-icon {
                   position: absolute;
                   display: block;
@@ -800,12 +903,14 @@ body {
                   opacity: 0;
                   transition: opacity 0.3s ease;
                 }
+
                 .tea-icon:hover {
                   background: url("../images/teaicon-hover.png") no-repeat
                     center;
                   transition: background 0.3s ease;
                 }
               }
+
               .tea-img:hover .tea-icon {
                 opacity: 1;
               }
@@ -914,9 +1019,11 @@ body {
               width: auto;
               height: 100%;
               color: #333;
+
               .tea-img {
                 position: relative;
                 display: block;
+
                 img {
                   max-width: 100%;
                   height: auto;
@@ -959,6 +1066,7 @@ body {
                 .item2-9:hover {
                   content: url("/images/item2-9-hover.png");
                 }
+
                 .tea-icon {
                   position: absolute;
                   display: block;
@@ -970,12 +1078,14 @@ body {
                   opacity: 0;
                   transition: opacity 0.3s ease;
                 }
+
                 .tea-icon:hover {
                   background: url("../images/teaicon-hover.png") no-repeat
                     center;
                   transition: background 0.3s ease;
                 }
               }
+
               .tea-img:hover .tea-icon {
                 opacity: 1;
               }
