@@ -149,6 +149,11 @@ $(document).ready(function () {
       $(".sw-visual-pause").removeClass("sw-visual-play");
     }
   });
+
+  let swQuick = new Swiper(".sw-quick", {
+    slidesPerView: 4.2,
+    spaceBetween: 20,
+  });
   let noticeList = $(".notice-list > li");
   let noticeTotal = noticeList.length;
   let noticeIndex = 0;
