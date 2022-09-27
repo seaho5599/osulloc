@@ -1,110 +1,110 @@
 [
-    {
-      "link": "#",
-      "img": "item1.png",
-      "imghover":"item1-hover.png",
-      "imgclass":"item1",
-      "title": "프리미엄 티 컬렉션 90입",
-      "origin": "70,000원",
-      "price": "49,000원",
-      "sale": "30%",
-      "newclass": "new-non"
-
-      
-    },
-    {
-      "link": "#",
-      "img": "item2.png",
-      "imghover":"item2-hover.png",
-      "imgclass":"item2",
-      "title": "메모리 인 제주 20입",
-      "origin": "38,000원",
-      "price": "30,400원",
-      "sale": "20%",
-      "newclass": "new-non"
-
-      
-    },
-    {
-      "link": "#",
-      "img": "item3.png",
-      "imghover":"item3-hover.png",
-      "imgclass":"item3",
-      "title": "[보자기 포장]스페셜 티 에디션",
-      "origin": "100,000원",
-      "price": "75,000원",
-      "sale": "25%",
-      "new": "신제품"
-    },
-    {
-      "link": "#",
-      "img": "item4.png",
-      "imghover":"item4-hover.png",
-      "imgclass":"item4",
-      "title": "[보자기 포장]프리미엄 티 컬렉션 90입",
-      "origin": "75,000원",
-      "price": "55,500원",
-      "sale": "26%",
-      "new": "신제품"
-    },
-    {
-      "link": "#",
-      "img": "item5.png",
-      "imghover":"item5-hover.png",
-      "imgclass":"item5",
-      "title": "[보자기 포장]애프터눈 티 박스",
-      "origin": "32,500원",
-      "price": "22,750원",
-      "sale": "30%",
-      "new": "신제품"
-    },
-    {
-      "link": "#",
-      "img": "item6.png",
-      "imghover":"item6-hover.png",
-      "imgclass":"item6",
-      "title": "프리미엄 티 컬렉션",
-      "origin": "28,000원",
-      "price": "22,400원",
-      "sale": "20%",
-      "newclass": "new-non"
-
-    },
-    {
-      "link": "#",
-      "img": "item7.png",
-      "imghover":"item7-hover.png",
-      "imgclass":"item7",
-      "title": "러블리 티 박스",
-      "origin": "20,000원",
-      "price": "15,000원",
-      "sale": "25%",
-      "newclass": "new-non"
-
-    },
-    {
-      "link": "#",
-      "img": "item8.png",
-      "imghover":"item8-hover.png",
-      "imgclass":"item8",
-      "title": "시크릿 티 스토리",
-      "origin": "45,000원",
-      "price": "36,000원",
-      "sale": "20%",
-      "newclass": "new-non"
-
-    },
-    {
-      "link": "#",
-      "img": "item9.png",
-      "imghover":"item9-hover.png",
-      "imgclass":"item9",
-      "title": "마스터 블렌드",
-      "price": "50,000원",
-      "originclass":"origni-non",
-      "saleclass":"sale-non",
-      "newclass": "new-non"
-
-    }
-
+  {
+    "link": "#",
+    "img": "item1.png",
+    "imghover": "item1-hover.png",
+    "imgclass": "item1",
+    "imghoverclass": "item1-hover",
+    "title": "프리미엄 티 컬렉션 90입",
+    "origin": "70,000원",
+    "price": "49,000원",
+    "sale": "30%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item2.png",
+    "imghover": "item2-hover.png",
+    "imgclass": "item2",
+    "imghoverclass": "item2-hover",
+    "title": "메모리 인 제주 20입",
+    "origin": "38,000원",
+    "price": "30,400원",
+    "sale": "20%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item3.png",
+    "imghover": "item3-hover.png",
+    "imgclass": "item3",
+    "imghoverclass": "item3-hover",
+    "title": "[보자기 포장]스페셜 티 에디션",
+    "origin": "100,000원",
+    "price": "75,000원",
+    "sale": "25%",
+    "new": "신제품"
+  },
+  {
+    "link": "#",
+    "img": "item4.png",
+    "imghover": "item4-hover.png",
+    "imgclass": "item4",
+    "imghoverclass": "item4-hover",
+    "title": "[보자기 포장]프리미엄 티 컬렉션 90입",
+    "origin": "75,000원",
+    "price": "55,500원",
+    "sale": "26%",
+    "new": "신제품"
+  },
+  {
+    "link": "#",
+    "img": "item5.png",
+    "imghover": "item5-hover.png",
+    "imgclass": "item5",
+    "imghoverclass": "item5-hover",
+    "title": "[보자기 포장]애프터눈 티 박스",
+    "origin": "32,500원",
+    "price": "22,750원",
+    "sale": "30%",
+    "new": "신제품"
+  },
+  {
+    "link": "#",
+    "img": "item6.png",
+    "imghover": "item6-hover.png",
+    "imgclass": "item6",
+    "imghoverclass": "item6-hover",
+    "title": "프리미엄 티 컬렉션",
+    "origin": "28,000원",
+    "price": "22,400원",
+    "sale": "20%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item7.png",
+    "imghover": "item7-hover.png",
+    "imgclass": "item7",
+    "imghoverclass": "item7-hover",
+    "title": "러블리 티 박스",
+    "origin": "20,000원",
+    "price": "15,000원",
+    "sale": "25%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item8.png",
+    "imghover": "item8-hover.png",
+    "imgclass": "item8",
+    "imghoverclass": "item8-hover",
+    "title": "시크릿 티 스토리",
+    "origin": "45,000원",
+    "price": "36,000원",
+    "sale": "20%",
+    "newclass": "new-non"
+  },
+  {
+    "link": "#",
+    "img": "item9.png",
+    "imghover": "item9-hover.png",
+    "imgclass": "item9",
+    "imghoverclass": "item9-hover",
+    "title": "마스터 블렌드",
+    "price": "50,000원",
+    "originclass": "origni-non",
+    "saleclass": "sale-non",
+    "newclass": "new-non"
+  }
 ]

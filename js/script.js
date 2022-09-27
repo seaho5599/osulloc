@@ -177,17 +177,22 @@ $(document).ready(function () {
         <div class="swiper-slide">
           <a href="${value.link}">
               <div class="tea-img">
-              <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
-              <p class="tea-icon"></p>
+                <span class="tea-img-first">
+                  <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+                </span>
+                <span class="tea-img-sec">
+                  <img src = "images/${value.imghover}" alt="tea" class="${value.imghoberclass}">
+                </span>
+                <p class="tea-icon"></p>
               </div>
-              <p class="tea-name">${value.title}</p>
-              <p class="tea-origin ${value.originclass}">${value.origin}</p>
-              <p class="tea-price">${value.price}</p>
-              <span class="tea-sale ${value.saleclass}">${value.sale}</span>
-              <br>
-              <p class="tea-new ${value.newclass}">${value.new}</p>
-              </a>
-              </div>
+                <p class="tea-name">${value.title}</p>
+                <p class="tea-origin ${value.originclass}">${value.origin}</p>
+                <p class="tea-price">${value.price}</p>
+                <span class="tea-sale ${value.saleclass}">${value.sale}</span>
+                <br>
+                <p class="tea-new ${value.newclass}">${value.new}</p>
+          </a>
+        </div>
         `;
       });
       html += "";
@@ -222,7 +227,12 @@ $(document).ready(function () {
         <div class="swiper-slide">
           <a href="${value.link}">
               <div class="tea-img">
-              <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+                <span class="tea-img-first">
+                  <img src="images/${value.img}" alt="tea" class="${value.imgclass}">
+                </span>
+                <span class="tea-img-sec">
+                  <img src = "images/${value.imghover}" alt="tea" class="${value.imghoberclass}">
+                </span>
               <p class="tea-icon"></p>
               </div>
               <p class="tea-name">${value.title}</p>

@@ -60,12 +60,13 @@ body {
   position: relative;
   display: block;
 }
+
 /* 안내창 */
 .modal-wrap {
   position: fixed;
   left: 0;
   top: 0;
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
@@ -113,6 +114,7 @@ body {
   text-decoration: underline;
   color: #ed1c24;
 }
+
 .modal-line {
   display: block;
   width: 100%;
@@ -121,6 +123,7 @@ body {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+
 .modal-main span {
   font-size: 16px;
   font-weight: 400;
@@ -129,6 +132,7 @@ body {
   padding: 10px;
   letter-spacing: 0.5px;
 }
+
 .modal-close {
   position: absolute;
   right: 20px;
@@ -206,7 +210,7 @@ body {
     position: relative;
     display: flex;
     max-width: 1500px;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .header-left {
       display: flex;
@@ -456,6 +460,14 @@ body {
           background: url("../images/icon_more_hover.png") no-repeat center;
           background-size: cover;
         }
+        .mb-btn {
+          display: none;
+          width: 24px;
+          height: 24px;
+          background: url("../images/mb-menu.png") no-repeat center;
+          background-size: cover;
+          cursor: pointer;
+        }
       }
 
       .drop {
@@ -570,7 +582,53 @@ body {
   transition: background 0.5s ease;
   background: #fff;
 }
+@media screen and (max-width: 1280px) {
+  /* Header */
+  .header {
+    .inner {
+      justify-content: space-between;
 
+      .header-left {
+        padding-top: 14px;
+        padding-left: 14px;
+
+        .logo {
+          width: 60px;
+          height: 20px;
+          background-size: cover;
+        }
+
+        .logo-hv {
+          background: url("../images/logo_black.png") no-repeat center;
+        }
+
+        .gnb {
+          display: none;
+        }
+      }
+
+      .header-right {
+        display: flex;
+        padding-top: 16px;
+        padding-right: 16px;
+
+        .util {
+          margin-right: 0;
+          .more-btn {
+            display: none;
+          }
+          .mb-btn {
+            display: block;
+          }
+        }
+
+        .drop {
+          display: none;
+        }
+      }
+    }
+  }
+}
 /* Visual */
 .visual {
   position: relative;
@@ -586,7 +644,12 @@ body {
       display: block;
       width: 100%;
       height: 100%;
-
+      .pc-visual {
+        display: block;
+      }
+      .mb-visual {
+        display: none;
+      }
       .visual-inner {
         position: absolute;
         top: 0;
@@ -725,7 +788,135 @@ body {
     }
   }
 }
+@media screen and (max-width: 1280px) {
+  .visual {
+    .sw-visual {
+      a {
+        width: 150vw;
+        height: 49.2vw;
+      }
 
+      .sw-visual-prev {
+        left: 10px;
+      }
+
+      .sw-visual-next {
+        right: 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1025px) {
+  .visual {
+    position: relative;
+    display: block;
+
+    .sw-visual {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        .pc-visual {
+          display: none;
+        }
+        .mb-visual {
+          width: 100%;
+          display: block;
+        }
+        .visual-inner {
+          transform: translateX(-54%);
+          padding: 0 20px;
+
+          .visual-box {
+            bottom: 500px;
+            padding-top: 78.05vw;
+
+            .visual-title {
+              font-size: 27px;
+              font-weight: 500;
+              line-height: 1.29;
+            }
+
+            .visual-txt {
+              margin-top: 10px;
+              font-size: 13px;
+            }
+
+            .visual-date {
+              font-size: 13px;
+              font-weight: 500;
+              margin-top: 10px;
+            }
+          }
+        }
+
+        .visual-btn {
+          display: none;
+        }
+      }
+
+      .sw-visual-prev {
+        display: none;
+      }
+
+      .sw-visual-next {
+        display: none;
+      }
+
+      .sw-visual-control {
+        width: 100%;
+
+        .sw-visual-pause {
+          position: relative;
+          display: block;
+          width: 8px;
+          height: 12px;
+          background: url("../images/icon_btn_pause.png") no-repeat center;
+          background-size: cover;
+          border: 0;
+          margin-left: 20px;
+          cursor: pointer;
+        }
+
+        .sw-visual-play {
+          background: url("../images/icon_btn_play.png") no-repeat center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .visual {
+    .sw-visual {
+      a {
+        .visual-inner {
+          .visual-box {
+            padding-top: 63.05vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 558px) {
+  .visual {
+    .sw-visual {
+      a {
+        .visual-inner {
+          .visual-box {
+            padding-top: 33.05vw;
+          }
+        }
+      }
+    }
+  }
+}
 /* Item */
 .item {
   position: relative;
@@ -849,47 +1040,30 @@ body {
                 position: relative;
                 display: block;
 
-                img {
-                  max-width: 100%;
-                  height: auto;
-                  vertical-align: top;
-                  transition: all 0.3s ease;
+                .tea-img-first {
+                  display: block;
+
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                    vertical-align: top;
+                    transition: all 0.3s ease;
+                  }
                 }
 
-                .item1:hover {
-                  content: url("/images/item1-hover.png");
-                }
+                .tea-img-sec {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  display: block;
+                  opacity: 0;
 
-                .item2:hover {
-                  content: url("/images/item2-hover.png");
-                }
-
-                .item3:hover {
-                  content: url("/images/item3-hover.png");
-                }
-
-                .item4:hover {
-                  content: url("/images/item4-hover.png");
-                }
-
-                .item5:hover {
-                  content: url("/images/item5-hover.png");
-                }
-
-                .item6:hover {
-                  content: url("/images/item6-hover.png");
-                }
-
-                .item7:hover {
-                  content: url("/images/item7-hover.png");
-                }
-
-                .item8:hover {
-                  content: url("/images/item8-hover.png");
-                }
-
-                .item9:hover {
-                  content: url("/images/item9-hover.png");
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                    vertical-align: top;
+                    transition: all 0.3s ease;
+                  }
                 }
 
                 .tea-icon {
@@ -909,6 +1083,15 @@ body {
                     center;
                   transition: background 0.3s ease;
                 }
+              }
+
+              .tea-img:hover .tea-img-first {
+                opacity: 0;
+              }
+
+              .tea-img:hover .tea-img-sec {
+                opacity: 1;
+                transition: opacity 0.3s ease;
               }
 
               .tea-img:hover .tea-icon {
@@ -1024,47 +1207,30 @@ body {
                 position: relative;
                 display: block;
 
-                img {
-                  max-width: 100%;
-                  height: auto;
-                  vertical-align: top;
-                  transition: all 0.3s ease;
+                .tea-img-first {
+                  display: block;
+
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                    vertical-align: top;
+                    transition: all 0.3s ease;
+                  }
                 }
 
-                .item2-1:hover {
-                  content: url("/images/item2-1-hover.png");
-                }
+                .tea-img-sec {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  display: block;
+                  opacity: 0;
 
-                .item2-2:hover {
-                  content: url("/images/item2-2-hover.png");
-                }
-
-                .item2-3:hover {
-                  content: url("/images/item2-3-hover.png");
-                }
-
-                .item2-4:hover {
-                  content: url("/images/item2-4-hover.png");
-                }
-
-                .item2-5:hover {
-                  content: url("/images/item2-5-hover.png");
-                }
-
-                .item2-6:hover {
-                  content: url("/images/item2-6-hover.png");
-                }
-
-                .item2-7:hover {
-                  content: url("/images/item2-7-hover.png");
-                }
-
-                .item2-8:hover {
-                  content: url("/images/item2-8-hover.png");
-                }
-
-                .item2-9:hover {
-                  content: url("/images/item2-9-hover.png");
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                    vertical-align: top;
+                    transition: all 0.3s ease;
+                  }
                 }
 
                 .tea-icon {
@@ -1084,6 +1250,14 @@ body {
                     center;
                   transition: background 0.3s ease;
                 }
+              }
+              .tea-img:hover .tea-img-first {
+                opacity: 0;
+              }
+
+              .tea-img:hover .tea-img-sec {
+                opacity: 1;
+                transition: opacity 0.3s ease;
               }
 
               .tea-img:hover .tea-icon {
