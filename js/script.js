@@ -179,7 +179,7 @@ $(document).ready(function () {
       data.forEach(function (value, index, item) {
         // console.log(value)
         html += `
-        <div class="swiper-slide">
+        <div class="swiper-slide sw-item-slide">
           <a href="${value.link}">
               <div class="tea-img">
                 <span class="tea-img-first">
@@ -202,6 +202,7 @@ $(document).ready(function () {
       });
       html += "";
       document.getElementById("item-list").innerHTML = html;
+
       let swItem = new Swiper(".sw-item", {
         loop: true,
         slidesPerView: 5,
@@ -218,6 +219,7 @@ $(document).ready(function () {
           prevEl: ".sw-item-prev",
         },
       });
+      swItem = null;
     })
     .catch((err) => console.log(err));
 
@@ -253,7 +255,7 @@ $(document).ready(function () {
       });
       html += "";
       document.getElementById("item-list2").innerHTML = html;
-      let swItem = new Swiper(".sw-item2", {
+      let swItem2 = new Swiper(".sw-item2", {
         loop: true,
         slidesPerView: 5,
         spaceBetween: 20,
@@ -269,12 +271,13 @@ $(document).ready(function () {
           prevEl: ".sw-item-prev",
         },
       });
+      swItem2 = null;
     })
     .catch((err) => console.log(err));
 
   let itemBest = $(".item-best");
   let itemPop = $(".item-pop");
-  itemPop.click(function () {
+  let itemPopClick = itemPop.on("click", function () {
     $(".sw-item").hide();
     $(".sw-item2").show();
     $(this).css({
@@ -286,7 +289,7 @@ $(document).ready(function () {
       color: "#999",
     });
   });
-  itemBest.click(function () {
+  let itemBestClick = itemBest.on("click", function () {
     $(".sw-item").show();
     $(".sw-item2").hide();
     $(this).css({
@@ -294,6 +297,71 @@ $(document).ready(function () {
       color: "#fff",
     });
     itemPop.css({
+      "background-color": "#F6F6F6",
+      color: "#999",
+    });
+  });
+  $(window).resize(function () {
+    let wW = $(window).width();
+    if (wW <= 1025) {
+      $(".sw-item").hide();
+      $(".sw-item2").hide();
+      itemPop.off("click");
+      itemBest.off("click");
+    } else {
+      $(".sw-item").show();
+      $(".sw-item2").show();
+      itemPop.on("click");
+      itemBest.on("click");
+    }
+  });
+  // mbSwItem = null;
+  // mbSwItem2 = null;
+  let mbSwItem = new Swiper(".mb-sw-item", {
+    loop: true,
+    pagination: {
+      el: ".mb-switem-pg",
+      clickable: true,
+    },
+  });
+
+  let mbSwItem2 = new Swiper(".mb-sw-item2", {
+    loop: true,
+    pagination: {
+      el: ".mb-switem-pg",
+      clickable: true,
+    },
+  });
+  $(window).resize(function () {
+    let wW = $(window).width();
+    if (wW <= 1025) {
+      mbSwItem;
+      mbSwItem2;
+    } else {
+    }
+  });
+  let mbItemBest = $(".mb-item-best");
+  let mbItemPop = $(".mb-item-pop");
+  let mbItemPopClick = mbItemPop.on("click", function () {
+    $(".mb-sw-item").hide();
+    $(".mb-sw-item2").show();
+    $(this).css({
+      "background-color": "#6C801A",
+      color: "#fff",
+    });
+    mbItemBest.css({
+      "background-color": "#F6F6F6",
+      color: "#999",
+    });
+  });
+  let mbItemBestClick = mbItemBest.on("click", function () {
+    $(".mb-sw-item").show();
+    $(".mb-sw-item2").hide();
+    $(this).css({
+      "background-color": "#6C801A",
+      color: "#fff",
+    });
+    mbItemPop.css({
       "background-color": "#F6F6F6",
       color: "#999",
     });
