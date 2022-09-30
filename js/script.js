@@ -70,8 +70,10 @@ $(document).ready(function () {
     let temp = $(window).scrollTop();
     if (temp >= 618) {
       headerEn();
+      $('.mb-btn').addClass('mb-btn-scroll')
     } else {
       headerLe();
+      $('.mb-btn').removeClass('mb-btn-scroll')
     }
   });
 
@@ -170,7 +172,7 @@ $(document).ready(function () {
     });
   }
   setInterval(showNotice, noticeTime);
-
+  let wW = window.innerWidth;
   fetch("item.json")
     .then((res) => res.json())
     .then((data) => {
@@ -202,26 +204,54 @@ $(document).ready(function () {
       });
       html += "";
       document.getElementById("item-list").innerHTML = html;
-
-      let swItem = new Swiper(".sw-item", {
-        loop: true,
-        slidesPerView: 5,
-        spaceBetween: 20,
-        centeredSlides: true,
-        observer: true,
-        observeParents: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".sw-item-next",
-          prevEl: ".sw-item-prev",
-        },
+      if (wW > 1025) {
+        let swItem = new Swiper(".sw-item2", {
+          loop: true,
+          slidesPerView: 5,
+          spaceBetween: 20,
+          centeredSlides: true,
+          observer: true,
+          observeParents: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: ".sw-item-next",
+            prevEl: ".sw-item-prev",
+          },
+        });
+      }
+      $(window).resize(function () {
+        // let temp = $(window).width();
+        let temp = window.innerWidth;
+        if (temp < 1025) {
+          $('.sw-item.swiper-slide').removeAttr('style', 0);
+          $('.sw-item') = null;
+          $('.sw-item').destroy();
+          $('.sw-item').hide();
+        } else {
+          let swItem = new Swiper(".sw-item", {
+            loop: true,
+            slidesPerView: 5,
+            spaceBetween: 20,
+            centeredSlides: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: ".sw-item-next",
+              prevEl: ".sw-item-prev",
+            },
+          });
+        }
       });
-      swItem = null;
     })
     .catch((err) => console.log(err));
+
 
   fetch("item2.json")
     .then((res) => res.json())
@@ -255,23 +285,51 @@ $(document).ready(function () {
       });
       html += "";
       document.getElementById("item-list2").innerHTML = html;
-      let swItem2 = new Swiper(".sw-item2", {
-        loop: true,
-        slidesPerView: 5,
-        spaceBetween: 20,
-        centeredSlides: true,
-        observer: true,
-        observeParents: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".sw-item-next",
-          prevEl: ".sw-item-prev",
-        },
+      if (wW > 1025) {
+        let swItem2 = new Swiper(".sw-item2", {
+          loop: true,
+          slidesPerView: 5,
+          spaceBetween: 20,
+          centeredSlides: true,
+          observer: true,
+          observeParents: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: ".sw-item-next",
+            prevEl: ".sw-item-prev",
+          },
+        });
+      }
+      $(window).resize(function () {
+        // let temp = $(window).width();
+        let temp = window.innerWidth;
+        if (temp < 1025) {
+          $('.sw-item2.swiper-slide').removeAttr('style', 0);
+          $('.sw-item2') = null;
+          $('.sw-item2').destroy();
+          $('.sw-item2').hide();
+        } else {
+          let swItem2 = new Swiper(".sw-item2", {
+            loop: true,
+            slidesPerView: 5,
+            spaceBetween: 20,
+            centeredSlides: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: ".sw-item-next",
+              prevEl: ".sw-item-prev",
+            },
+          });
+        }
       });
-      swItem2 = null;
     })
     .catch((err) => console.log(err));
 
@@ -301,45 +359,61 @@ $(document).ready(function () {
       color: "#999",
     });
   });
+  let mbSwItem = null;
+  let mbSwItem2 = null;
+  if (wW <= 1025) {
+    mbSwItem = new Swiper(".mb-sw-item", {
+      loop: true,
+      pagination: {
+        el: ".mb-switem-pg",
+        clickable: true,
+      },
+    });
+    mbSwItem2 = new Swiper(".mb-sw-item2", {
+      loop: true,
+      pagination: {
+        el: ".mb-switem-pg",
+        clickable: true,
+      },
+    });
+  }
+
   $(window).resize(function () {
-    let wW = $(window).width();
-    if (wW <= 1025) {
-      $(".sw-item").hide();
-      $(".sw-item2").hide();
-      itemPop.off("click");
-      itemBest.off("click");
+    let temp = window.innerWidth;
+    if (temp <= 1025) {
+      if (mbSwItem == null) {
+        mbSwItem = new Swiper(".mb-sw-item", {
+          loop: true,
+          pagination: {
+            el: ".mb-switem-pg",
+            clickable: true,
+          },
+        });
+      }
+      
+      if (mbSwItem2 == null) {
+        mbSwItem2 = new Swiper(".mb-sw-item2", {
+          loop: true,
+          pagination: {
+            el: ".mb-switem-pg",
+            clickable: true,
+          },
+        });
+      }
     } else {
-      $(".sw-item").show();
-      $(".sw-item2").show();
-      itemPop.on("click");
-      itemBest.on("click");
+      $('.mb-sw-item .swiper-slide').removeAttr('style', 0);
+      if(mbSwItem != null) {    
+        mbSwItem.destroy();
+        mbSwItem = null;
+      }
+      $('.mb-sw-item2 .swiper-slide').removeAttr('style', 0);
+      if(mbSwItem != null) {    
+        mbSwItem.destroy();
+        mbSwItem = null;
+      }
     }
-  });
-  // mbSwItem = null;
-  // mbSwItem2 = null;
-  let mbSwItem = new Swiper(".mb-sw-item", {
-    loop: true,
-    pagination: {
-      el: ".mb-switem-pg",
-      clickable: true,
-    },
   });
 
-  let mbSwItem2 = new Swiper(".mb-sw-item2", {
-    loop: true,
-    pagination: {
-      el: ".mb-switem-pg",
-      clickable: true,
-    },
-  });
-  $(window).resize(function () {
-    let wW = $(window).width();
-    if (wW <= 1025) {
-      mbSwItem;
-      mbSwItem2;
-    } else {
-    }
-  });
   let mbItemBest = $(".mb-item-best");
   let mbItemPop = $(".mb-item-pop");
   let mbItemPopClick = mbItemPop.on("click", function () {
@@ -385,8 +459,7 @@ $(document).ready(function () {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    document.getElementById("news-time").innerHTML =
-      +hours + " : " + minutes + " : " + seconds;
+    document.getElementById("news-time").innerHTML = +hours + " : " + minutes + " : " + seconds;
 
     // If the count down is over, write some text
     if (distance < 0) {
@@ -438,6 +511,31 @@ $(document).ready(function () {
       });
       html += "";
       document.getElementById("daily-list").innerHTML = html;
+      let swDaily = null;
+      let wW = window.innerWidth;
+      if (wW <= 1025) {
+        swDaily = new Swiper(".sw-daily", {
+          slidesPerView: 1.3,
+          spaceBetween: 10,
+        });
+      }
+      $(window).resize(function () {
+        let temp = window.innerWidth;
+        if (temp <= 1025) {
+          if (swDaily == null) {
+            swDaily = new Swiper(".sw-daily", {
+              slidesPerView: 1.3,
+              spaceBetween: 10,
+            });
+          }
+        } else {
+          $(".sw-daily .swiper-slide").removeAttr("style", 0);
+          if (swDaily != null) {
+            swDaily.destroy();
+            swDaily = null;
+          }
+        }
+      });
     })
     .catch((err) => console.log(err));
   fetch("history.json")
@@ -459,11 +557,17 @@ $(document).ready(function () {
       html += "";
       document.getElementById("history-list").innerHTML = html;
       let swHistory = new Swiper(".sw-history", {
-        slidesPerView: 3.1,
-        spaceBetween: 30,
+        slidesPerView: 1.1,
+        spaceBetween: 10,
         navigation: {
           nextEl: ".sw-history-next",
           prevEl: ".sw-history-prev",
+        },
+        breakpoints: {
+          1025: {
+            slidesPerView: 3.1, //브라우저가 1024보다 클 때
+            spaceBetween: 30,
+          },
         },
       });
     })
