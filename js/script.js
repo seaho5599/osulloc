@@ -70,10 +70,10 @@ $(document).ready(function () {
     let temp = $(window).scrollTop();
     if (temp >= 618) {
       headerEn();
-      $('.mb-btn').addClass('mb-btn-scroll')
+      $(".mb-btn").addClass("mb-btn-scroll");
     } else {
       headerLe();
-      $('.mb-btn').removeClass('mb-btn-scroll')
+      $(".mb-btn").removeClass("mb-btn-scroll");
     }
   });
 
@@ -205,7 +205,7 @@ $(document).ready(function () {
       html += "";
       document.getElementById("item-list").innerHTML = html;
       if (wW > 1025) {
-        let swItem = new Swiper(".sw-item2", {
+        let swItem = new Swiper(".sw-item", {
           loop: true,
           slidesPerView: 5,
           spaceBetween: 20,
@@ -226,10 +226,10 @@ $(document).ready(function () {
         // let temp = $(window).width();
         let temp = window.innerWidth;
         if (temp < 1025) {
-          $('.sw-item.swiper-slide').removeAttr('style', 0);
-          $('.sw-item') = null;
-          $('.sw-item').destroy();
-          $('.sw-item').hide();
+          // $(".sw-item.swiper-slide").removeAttr("style", 0);
+          // $('.sw-item') = null;
+          // $(".sw-item").destroy();
+          $(".sw-item").hide();
         } else {
           let swItem = new Swiper(".sw-item", {
             loop: true,
@@ -251,7 +251,6 @@ $(document).ready(function () {
       });
     })
     .catch((err) => console.log(err));
-
 
   fetch("item2.json")
     .then((res) => res.json())
@@ -307,10 +306,10 @@ $(document).ready(function () {
         // let temp = $(window).width();
         let temp = window.innerWidth;
         if (temp < 1025) {
-          $('.sw-item2.swiper-slide').removeAttr('style', 0);
-          $('.sw-item2') = null;
-          $('.sw-item2').destroy();
-          $('.sw-item2').hide();
+          // $(".sw-item2.swiper-slide").removeAttr("style", 0);
+          // $('.sw-item2') = null;
+          // $(".sw-item2").destroy();
+          $(".sw-item2").hide();
         } else {
           let swItem2 = new Swiper(".sw-item2", {
             loop: true,
@@ -390,7 +389,7 @@ $(document).ready(function () {
           },
         });
       }
-      
+
       if (mbSwItem2 == null) {
         mbSwItem2 = new Swiper(".mb-sw-item2", {
           loop: true,
@@ -401,13 +400,13 @@ $(document).ready(function () {
         });
       }
     } else {
-      $('.mb-sw-item .swiper-slide').removeAttr('style', 0);
-      if(mbSwItem != null) {    
+      $(".mb-sw-item .swiper-slide").removeAttr("style", 0);
+      if (mbSwItem != null) {
         mbSwItem.destroy();
         mbSwItem = null;
       }
-      $('.mb-sw-item2 .swiper-slide').removeAttr('style', 0);
-      if(mbSwItem != null) {    
+      $(".mb-sw-item2 .swiper-slide").removeAttr("style", 0);
+      if (mbSwItem != null) {
         mbSwItem.destroy();
         mbSwItem = null;
       }
@@ -459,7 +458,8 @@ $(document).ready(function () {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    document.getElementById("news-time").innerHTML = +hours + " : " + minutes + " : " + seconds;
+    document.getElementById("news-time").innerHTML =
+      +hours + " : " + minutes + " : " + seconds;
 
     // If the count down is over, write some text
     if (distance < 0) {
